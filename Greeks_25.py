@@ -467,7 +467,7 @@ st.download_button(
     mime="text/csv",
 )
     # Create a buffer
-    csv_string = sample_data.to_csv(index=False)
+csv_string = sample_data.to_csv(index=False)
 
 # Download button for sample data
 st.download_button(
