@@ -12,7 +12,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import io
+
 
 # Set page config
 st.set_page_config(page_title="Black-Scholes Option Pricing Model", layout="wide")
