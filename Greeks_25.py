@@ -457,14 +457,12 @@ else:
     st.dataframe(sample_data)
     
     # Create a buffer
-    buffer = io.StringIO()
-    sample_data.to_csv(buffer, index=False)
-    buffer.seek(0)
-    
-    # Download button for sample data
-    st.download_button(
-        label="Download Sample CSV",
-        data=buffer,
-        file_name="sample_option_data.csv",
-        mime="text/csv",
+    csv_string = sample_data.to_csv(index=False)
+
+# Download button for sample data
+st.download_button(
+    label="Download Sample CSV",
+    data=csv_string,
+    file_name="sample_option_data.csv",
+    mime="text/csv",
     )
