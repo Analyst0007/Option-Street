@@ -4,5 +4,4 @@ scipy
 datetime
 streamlit
 plotly
-os
 io
