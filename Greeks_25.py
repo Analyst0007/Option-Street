@@ -447,15 +447,25 @@ else:
     
     # Sample data format
     st.header("Expected CSV Format")
-    sample_data = pd.DataFrame({
-        "Date": ["01-Jan-2023", "01-Jan-2023"],
-        "Expiry": ["01-Mar-2023", "01-Mar-2023"],
-        "Underlying Value": [100.0, 100.0],
-        "Strike Price": [95.0, 105.0]
-    })
-    
-    st.dataframe(sample_data)
-    
+sample_data = pd.DataFrame({
+    "Date": ["01-Jan-2023", "01-Jan-2023"],
+    "Expiry": ["01-Mar-2023", "01-Mar-2023"],
+    "Underlying Value": [100.0, 100.0],
+    "Strike Price": [95.0, 105.0]
+})
+
+st.dataframe(sample_data)
+
+# Generate CSV string directly from the sample data
+sample_csv_string = sample_data.to_csv(index=False)
+
+# Download button for sample data
+st.download_button(
+    label="Download Sample CSV",
+    data=sample_csv_string,
+    file_name="sample_option_data.csv",
+    mime="text/csv",
+)
     # Create a buffer
     csv_string = sample_data.to_csv(index=False)
 
